@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vst-project</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      // Prevent zooming with more than one finger
+      document.addEventListener('touchstart', function(e) {
+          if (e.touches.length > 1) {
+              e.preventDefault(); // Prevent zoom
+          }
+      }, { passive: false });
+
+      // Prevent pinch zooming with gestures
+      document.addEventListener('gesturestart', function(e) {
+          e.preventDefault(); // Prevent zoom gesture
+      }, { passive: false });
+    </script>
+  </body>
+</html>
